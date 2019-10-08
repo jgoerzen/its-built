@@ -93,7 +93,7 @@ out/pdp10-kl/stamp: $(OUT)/rp04.1
 	$(TOUCH) $@
 
 $(OUT)/rp0.dsk: build/simh/init $(OUT)/minsys.tape $(OUT)/minsrc.tape $(OUT)/salv.tape $(OUT)/dskdmp.tape build/build.tcl $(OUT)/sources.tape build/$(EMULATOR)/stamp
-	PATH="$(CURDIR)/tools/simh/BIN:$$PATH" expect -f build/$(EMULATOR)/build.tcl $(IP) $(GW)
+	PATH="$(CURDIR)/tools/simh/BIN:$$PATH" $(EXPECT) -f build/$(EMULATOR)/build.tcl $(IP) $(GW)
 
 $(OUT)/rp03.2 $(OUT)/rp03.3: $(OUT)/ka-minsys.tape $(OUT)/minsrc.tape $(OUT)/magdmp.tap $(OUT)/sources.tape
 	$(EXPECT) -f build/$(EMULATOR)/build.tcl $(IP) $(GW)
