@@ -76,6 +76,8 @@ OUT=out/$(EMULATOR)
 
 all: $(SMF) $(OUT)/stamp tools/supdup/supdup
 
+submodules: $(SMF)
+
 check: all check-dirs
 
 out/klh10/stamp: $(OUT)/rp0.dsk
